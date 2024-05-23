@@ -13,23 +13,11 @@ import { FormsModule } from '@angular/forms';
 export class TareaFormComponent {
 
   task = new Tarea()
-  tasks: any
+
 
   constructor(private fStoreService: FStoreService) { }
 
-  ngOnInit(): void {
-    this.fStoreService.recuperarTareas().then(data => {
-      this.tasks = data.docs.map((doc:any) => {
-        return {
-          titulo: doc.titulo,
-          ...doc.data()
-        }
-      })
-    })
-  }
-  
   saveTask() {
     this.fStoreService.guardarTarea(this.task)
-    this.ngOnInit
   }
 }

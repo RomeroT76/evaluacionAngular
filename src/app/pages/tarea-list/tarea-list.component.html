@@ -1,0 +1,13 @@
+<div class="task-list">
+    <h1>Task List</h1>
+    <ul>
+        @for (task of tasks; track task) {
+            <li><Strong>{{task.titulo}}</Strong>
+                <br>
+                {{task.descripcion}}
+                <br>
+                <input type="button" value="delete" (click)="deleteTask(task.titulo)">
+            </li>
+        }
+    </ul>
+</div>
